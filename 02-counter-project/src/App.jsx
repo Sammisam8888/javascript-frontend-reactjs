@@ -13,6 +13,12 @@ function App() {
     setcounter(counter+1)
     console.log("value incremented : ", counter)
   }
+  const Increase4= () => {
+    setcounter(counter = counter+1)
+    setcounter(counter = counter+1)
+    setcounter(counter = counter+1)
+    console.log("value incremented : ", counter)
+  }
   const Decrement= () => {
     setcounter(counter-1)
     console.log("value decremented : ", counter)
@@ -31,6 +37,8 @@ function App() {
       <button onClick={Decrement}>Decrease value</button>
       <br />
       <button onClick={Reset}>Reset value</button>
+      <br />
+      <button onClick={Increase4}>Increase value by 4</button>
     </>
   )
 }
