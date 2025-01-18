@@ -40,23 +40,25 @@ function App() {
   return (
     <>
     <h1 className='text-2xl font-bold w-screen text-center text-white' style={{backgroundColor:'green'}}>Password Generator</h1>
-     <div className='w-full flex-wrap max-w-md mx-auto shadow-lg rounded-lg my-8 bg-gray-300 p-5 m-10'> 
-      <div className='flex shadow-sm rounded-lg overflow-hidden mb-4 '>
+     <div className='w-full flex-wrap max-w-fit mx-auto shadow-lg rounded-lg my-10 bg-gray-300 px-5 py-5 m-10'> 
+      
+      <div className='flex shadow-sm rounded-lg overflow-hidden mb-4 bg-blue'>
       <input 
       type="text"
       value={Password}
-      className='outline-none w-full py-1 px-3 rounded-lg my-1'
+      className='outline-none w-full font-bold py-1 px-3 rounded-lg my-1'
       placeholder='password'
       ref={passwordRef}
       readOnly /> 
       <button 
       onClick={copyPasswordToClipboard}
-      className='outline-none rounded-lg  hover:bg-green-800 
+      className='outline-none font-bold rounded-lg  hover:bg-green-800 
        active:bg-green-900 active:ring-black
        active:ring-2 
        active:ring-offset-1 bg-green-700 text-white px-3 py-0.5 m-3 shrink-0'
       > Copy </button>
       </div>
+
       <div className='flex flex-wrap text-sm gap-2'>
         <div className='flex items-center gap-1'>
           <input 
@@ -80,7 +82,7 @@ function App() {
             setnumberAllowed((prev)=> !prev)
           }}
           />
-          <label htmlFor='numberInput'>Numbers</label>
+          <label htmlFor='numberInput'>Include Numbers</label>
           
         </div>
         <div className='flex items-center gap-x-1'>
@@ -92,19 +94,24 @@ function App() {
             setcharAllowed((prev)=> !prev)
           }}
           />
-          <label htmlFor='numberInput'>Characters</label>
+          <label htmlFor='numberInput'>Include Characters</label>
           
         </div>
           </div>
       </div>
+      <div className='w-full flex-wrap max-w-fit mx-auto shadow-lg rounded-lg my-10 px-5 py-5 m-10'>
       <button
       onClick={passwordGenerator}
-      className='bg-green-700 text-white mx-6 my-1 py-2 px-4 rounded-lg shadow-lg hover:bg-green-800 
+      className='bg-green-700 text-white 
+         
+      py-2 px-4 rounded-lg shadow-lg
+       hover:bg-green-800 
       
        active:bg-green-900 active:ring-white
        active:ring-2 
        active:ring-offset-1' 
       >Regenerate Password</button>
+      </div>
     </>
   )
 }
